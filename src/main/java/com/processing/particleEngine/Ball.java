@@ -1,7 +1,7 @@
 /*
  * Coder: Allison Hart
  * Date 9/8/2024
- * Description: Ball Class - ball that bounces up and down :)
+ * Description: Ball Class - ball that bounces up and down, changes color, and size :)
  * 
  */
 
@@ -71,11 +71,11 @@ void faster()
 {
 
 yVel+=2; //+=4 makes it go really fast 
-xVel +=2; // makes ball go fast on 
+xVel +=2; // makes ball go fast on x
 
 }
 
-public void scatterFrom(float clickX, float clickY) {
+void scatterFrom(float clickX, float clickY) {
     float dx = x - clickX;
     float dy = y - clickY;
     float distance = PApplet.dist(x, y, clickX, clickY);
