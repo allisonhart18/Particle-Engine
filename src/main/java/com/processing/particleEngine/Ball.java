@@ -22,7 +22,7 @@ public class Ball {
     float xDirect = 1; // direction ball goes in on x axis
     float radius; //size
     float yDirect = 1; //which direction the ball goes - +1 = go down, -1 = go up
-    float dragStrength = .1f; // controls how strongly balls move in mouseDragged
+    
 
 
 Ball(float locX, float locY, float bRadius, PApplet bmain, int c)
@@ -83,31 +83,6 @@ yVel+=1; //+=4 makes it go really fast
 xVel +=1; // makes ball go fast on 
 
 }
-
-void dragged(float mouseX, float mouseY)
-{
-    float dx = mouseX -x;
-    float dy = mouseY -y;
-
-    float randomOffSetX = main.random(-5,5);
-    float randomOffSetY = main.random(-5,5);
-    // calculate mouse direction
-
-x += (dx + randomOffSetX) * dragStrength;
-y +=(dy + randomOffSetY) * dragStrength;
-
-x = PApplet.constrain(x, radius /2, main.width - radius /2);
-y = PApplet.constrain(y, radius /2, main.height - radius/2);
-
-
-
-
-
-
-
-
-}
-
 
 void released()
 {
