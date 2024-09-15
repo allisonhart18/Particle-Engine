@@ -79,8 +79,8 @@ x = radius /2;
 void faster()
 {
 
-yVel+=1; //+=4 makes it go really fast 
-xVel +=1; // makes ball go fast on 
+yVel+=2; //+=4 makes it go really fast 
+xVel +=2; // makes ball go fast on 
 
 }
 

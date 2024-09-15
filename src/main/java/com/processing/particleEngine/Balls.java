@@ -31,7 +31,7 @@ public class Balls {
     void setup()
     {
         main.background(255);
-        for (int i = 0; i < 800; i++){
+        for (int i = 0; i < 1000; i++){
             float x = main.random(main.width);
             float y = main.random(main.height);
             float radius = 10;
