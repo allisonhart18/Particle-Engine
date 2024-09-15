@@ -15,22 +15,21 @@ public class Main extends PApplet {
 Balls balls; // draws ball simutlation
 
 
-
     public static void main(String[] args) {
         PApplet.main("com.processing.particleEngine.Main");
     }
 
     //setup function - initializes drawing
     public void settings() {
-        size(800, 600);
+        size(600, 600);
         balls = new Balls(this);
     }
 
-    // black background
+    
     public void setup()
     {
-
         balls.setup();
+        
     }
 
 
@@ -43,26 +42,31 @@ Balls balls; // draws ball simutlation
     // will be a way to interacte w/ particles
 public void mousePressed()
 {
-    balls.mousePressed();
+    balls.mousePressed(mouseX, mouseY);
 
 }
 
 
-
+// when mouse is released color changes - easiest to see when balls are bigger
 public void mouseReleased()
 {
-// balls.mouseReleased
+balls.mouseReleased();
 
 
 }
 
 public void keyPressed()
  {
-    // balls.keyPressed();
+    balls.keyPressed();
 
 
  }
 
-}
+ 
+
+ }
+ 
+
+
 
 

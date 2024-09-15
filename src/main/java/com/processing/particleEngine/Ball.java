@@ -17,8 +17,8 @@ public class Ball {
 
     int ballColor;  
     float x, y; // loaction of ball
-    float yVel =1; // how fast ball moves
-    float xVel = 1; // how fast moves on x
+    float yVel = 0; // how fast ball moves
+    float xVel = 0; // how fast moves on x
     float xDirect = 1; // direction ball goes in on x axis
     float radius; //size
     float yDirect = 1; //which direction the ball goes - +1 = go down, -1 = go up
@@ -42,36 +42,27 @@ void draw()
     move();
 }
 
-void move()
+void move() // moves balls and keeps them within screen
 {
-// y motion
-y+= yVel*yDirect;
+    x += xVel;
+    y += yVel;
 
-if(y + radius /2 > main.height)
-{
-yDirect =-1;
-y= main.height - radius /2;
-}
-
-if(y - radius /2 < 0)
-{
-yDirect = 1;
-y = radius /2;
-
-}
-
-// x motion
-x+= xVel*xDirect;
-
-if(x + radius /2 > main.width)
-{
-xDirect =-1;
-}
-
-if(x - radius /2 < 0)
-{
-xDirect = 1;
-x = radius /2;
+    // Ensure the ball stays within the window boundaries
+    if (x < radius / 2) {
+        x = radius / 2;
+        xVel *= -1; // Reverse direction when hitting the boundary
+    }
+    if (x > main.width - radius / 2) {
+        x = main.width - radius / 2;
+        xVel *= -1; // Reverse direction when hitting the boundary
+    }
+    if (y < radius / 2) {
+        y = radius / 2;
+        yVel *= -1; // Reverse direction when hitting the boundary
+    }
+    if (y > main.height - radius / 2) {
+        y = main.height - radius / 2;
+        yVel *= -1;
 }
 
 }
@@ -84,17 +75,32 @@ xVel +=2; // makes ball go fast on
 
 }
 
-void released()
-{
+public void scatterFrom(float clickX, float clickY) {
+    float dx = x - clickX;
+    float dy = y - clickY;
+    float distance = PApplet.dist(x, y, clickX, clickY);
+    if (distance > 0) {
+        // Normalize direction and set velocity
+        xVel = dx / distance * 5; // Scale factor for velocity
+        yVel = dy / distance * 5; // Scale factor for velocity
+    }
+}
 
+void changeColor() // changes color randomly - call in balls class
+{
+ballColor = main.color(main.random(255), main.random(255), main.random(255));
 
 }
 
-void kPressed()
+void changeSize() // size of ball chnages up to radius of 40 abd reset to 10
 {
+radius += 10;
+if(radius >40){
 
-
-
+    radius = 10;
 }
+}
+
+
 
 }

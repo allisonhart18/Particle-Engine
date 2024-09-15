@@ -23,10 +23,6 @@ public class Balls {
     }
     
 
-
-    //Ball ball; //test case ball :)
-    
-
     //setup for paricle enhgine
     void setup()
     {
@@ -50,42 +46,44 @@ public class Balls {
     for(Ball ball :balls){
         ball.draw();
     }
-    
-
-
 
     }
 
 
-    void mousePressed() // when mouse is pressed ball goes faster in all directions
+    void mousePressed(float clickX, float clickY) // when mouse is pressed ball goes faster in all directions
     {
         for(Ball ball : balls) {
 
             ball.faster();
+            ball.scatterFrom(clickX, clickY);
         }
-       
-
 
     }
 
     
-        
-
-    
+ 
 
     void mouseReleased() // when mouse is released colors change
     {
+        for(Ball ball : balls){
 
-        //ball.released
+            ball.changeColor();
+        }
 
     }
 
-    void keyPressed()
+    void keyPressed() // when s is pressed balls get bigger up to 40 radius
     {
+        if(main.key == 's'){
+            for(Ball ball : balls){
 
-        // ball.kpress
+                ball.changeSize();
+            }
+        }
 
     }
+
+    
     
 
 }
