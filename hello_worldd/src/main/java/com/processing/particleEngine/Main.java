@@ -12,7 +12,7 @@ import processing.core.*;
 
 public class Main extends PApplet {
 
-Ball ball; // a ball that we will draw to the screen
+Balls balls; // draws ball simutlation
 
 
 
@@ -23,30 +23,27 @@ Ball ball; // a ball that we will draw to the screen
     //setup function - initializes drawing
     public void settings() {
         size(800, 600);
+        balls = new Balls(this);
     }
 
     // black background
     public void setup()
     {
-        background(0);
-        ball = new Ball(width/2.0f, height*.10f, 50.f, this, color(random(255), random(255), random(255)));
+
+        balls.setup();
     }
 
 
     //draws everything on screen
     public void draw()
     { 
-
-    noStroke();
-    ball.draw();
-
+        balls.draw();
     }
 
     // will be a way to interacte w/ particles
 public void mousePressed()
 {
-
-
+    balls.mousePressed();
 
 }
 
