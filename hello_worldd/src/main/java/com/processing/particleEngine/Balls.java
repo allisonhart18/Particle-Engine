@@ -68,13 +68,7 @@ public class Balls {
 
     }
 
-    void mouseDragged() // when mouse is dragged balls move away?
-    {
-        for (Ball ball : balls){
-        ball.dragged(main.mouseX, main.mouseY);
-}
-
-    }
+    
         
 
     
