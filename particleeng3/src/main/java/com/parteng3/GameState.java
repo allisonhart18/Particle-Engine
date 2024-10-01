@@ -1,3 +1,11 @@
+/*
+ * Coder: Allison Hart
+ * 9/30/2024
+ * GameState class - abstract class called in playState class
+ * 
+ * 
+ */
+
 package com.parteng3;
 
 import processing.core.PApplet;

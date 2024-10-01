@@ -1,3 +1,11 @@
+/*
+ * Coder: Allison Hart
+ * 9/30/2024
+ * Particle Parent class - holds all basic info for shapes
+ * 
+ * 
+ */
+
 package com.parteng3;
 
 import processing.core.PApplet;
@@ -21,7 +29,7 @@ abstract class Particle {
         this.color = color;
     }
 
-    void move() {
+   void move() {
         // Only move if not being dragged
         if (!isDragging) {
             x += vx;
@@ -46,6 +54,9 @@ abstract class Particle {
             isDragging = true;
             offsetX = main.mouseX - x;
             offsetY = main.mouseY - y;
+
+            main.noStroke();
+            color = main.color(main.random(255), main.random(255), main.random(255));
         }
     }
 
@@ -63,4 +74,9 @@ abstract class Particle {
     }
 
     abstract void display();
+
+    void keyPressed(){};
+  
+    void mouseClicked(){};
+    
 }

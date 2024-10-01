@@ -1,3 +1,11 @@
+
+/*
+ * Coder: Allison Hart
+ * 9/30/2024
+ * square-ish shape class - creates strange square shape 
+ * 
+ * 
+ */
 package com.parteng3;
 
 import processing.core.PApplet;
@@ -9,7 +17,13 @@ class squareSprinkle extends Particle {
 
     @Override
     void display() {
+        //makes funky square circle 
         main.fill(color);
-        main.rect(x, y, size+25, size+25); // Draw square
-    }
+        main.rect(x, y, size+25, size+25);
+        main.ellipse(x, y, 27, 27); // Top-left corner circle/ellipse
+            main.ellipse(x + 30, y +30, size, size); // Top-right corner circle/ellipse
+            main.ellipse(x + size, y + size, 50, 50);
+        }
+   
+    
 }

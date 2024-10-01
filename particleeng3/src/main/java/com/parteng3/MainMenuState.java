@@ -1,3 +1,11 @@
+/*
+ * Coder: Allison Hart
+ * 9/30/2024
+ * MainMenuState class - creates main menu and functionality, press enter and it switches you to the game
+ * 
+ * 
+ */
+
 package com.parteng3;
 
 import processing.core.PApplet;
@@ -18,7 +26,7 @@ class MainMenuState extends GameState {
     }
 
     void mouseClicked() {
-        // No specific action on mouse click for this state
+        
     }
 
     void keyPressed() {
@@ -27,21 +35,21 @@ class MainMenuState extends GameState {
         }
     }
 
-    //@Override
+  
     void mousePressed() {
        
     }
 
-    //@Override
+  
     void display() {
     }
 
-    //@Override
+   
     void mouseDragged() {
         
     }
 
-   // @Override
+ 
     void mouseReleased() {
         
     }

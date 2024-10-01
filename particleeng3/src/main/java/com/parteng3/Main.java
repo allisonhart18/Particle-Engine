@@ -1,3 +1,16 @@
+/*
+ * Coder: Allison Hart
+ * 9/30/2024
+ * Main class - calls from the controller class and makes sure everything run
+ * 
+ * How to Play Game :) (attempt at extra credit)
+ * 
+ * drage the shapes into the rectangle - circles are grabbed from the middle, triangles from theri top point, and square from their top left point
+ *  pressing r,g,b changes colors of different shapes, when you click on specific shapes they change color 
+ * 
+ * 
+ */
+
 package com.parteng3;
 
 import processing.core.PApplet;
@@ -34,5 +47,8 @@ public class Main extends PApplet {
 
     public void mouseReleased() {
         controller.mouseReleased();
+    }
+    public void keyPressed() {
+        controller.keyPressed();
     }
 }
